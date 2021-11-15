@@ -18,7 +18,7 @@ description VARCHAR
 CREATE TABLE department_news (
 id SERIAL PRIMARY KEY,
 department_id INT,
-news_is INT
+news_id INT
 );
 
 CREATE TABLE staff (
