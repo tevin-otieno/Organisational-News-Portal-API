@@ -12,6 +12,7 @@ CREATE TABLE news (
 id SERIAL PRIMARY KEY,
 title VARCHAR,
 news_type VARCHAR,
+department_id INT,
 description VARCHAR
 );
 
@@ -24,6 +25,7 @@ news_id INT
 CREATE TABLE staff (
 id SERIAL PRIMARY KEY,
 name VARCHAR,
+position VARCHAR,
 department_id INT,
 staff_role VARCHAR
 );
