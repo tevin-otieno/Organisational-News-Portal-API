@@ -20,18 +20,13 @@ public class Departments {
         return description;
     }
 
-    public int getSize() {
-        return size;
-    }
+    public int getSize() { return size; }
 
     public void setSize(int size) {
         this.size = size;
     }
 
-    public String getName() {
-        return name;
-    }
-
+    public String getName() { return name; }
 
     public int getId() {
         return id;
@@ -46,8 +41,7 @@ public class Departments {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Departments that = (Departments) o;
-        return id == that.id &&
-                Objects.equals(name, that.name);
+        return id == that.id && Objects.equals(name, that.name);
     }
 
     @Override
