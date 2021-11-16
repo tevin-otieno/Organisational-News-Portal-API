@@ -38,7 +38,7 @@ public class Sql2oDepartmentsDao implements DepartmentsDao{
     public void addUserToDepartment(Users user, Departments department) {
 
         try(Connection con=sql2o.open()) {
-            String sql="INSERT INTO users_departments (staff_id,department_id) VALUES (:user_id,:department_id)";
+            String sql="INSERT INTO users_departments (user_id,department_id) VALUES (:user_id,:department_id)";
             con.createQuery(sql)
                     .addParameter("user_id",user.getId())
                     .addParameter("department_id",department.getId())
@@ -83,7 +83,7 @@ public class Sql2oDepartmentsDao implements DepartmentsDao{
 
         List<Users> users=new ArrayList<>();
         try (Connection con=sql2o.open()){
-            String sql= "SELECT staff_id FROM users_departments WHERE department_id=:department_id";
+            String sql= "SELECT user_id FROM users_departments WHERE department_id=:department_id";
             List<Integer> userIds=con.createQuery(sql)
                     .addParameter("department_id",department_id)
                     .executeAndFetch(Integer.class);
