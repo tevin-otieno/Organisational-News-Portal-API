@@ -48,7 +48,7 @@ public class Sql2oUsersDao implements UsersDao{
     public List<Departments> getAllUserDepartments(int user_id) {
         List<Departments> departments=new ArrayList<>();
         try (Connection con=sql2o.open()) {
-            String sql = "SELECT department_id FROM users_departments WHERE staff_id=:staff_id";
+            String sql = "SELECT department_id FROM users_departments WHERE user_id=:user_id";
             List<Integer> departmentIds = con.createQuery(sql)
                     .addParameter("user_id", user_id)
                     .executeAndFetch(Integer.class);
