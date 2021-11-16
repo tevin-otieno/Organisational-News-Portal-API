@@ -13,6 +13,7 @@ id SERIAL PRIMARY KEY,
 title VARCHAR,
 news_type VARCHAR,
 department_id INT,
+user_id INT,
 description VARCHAR
 );
 
@@ -26,13 +27,12 @@ CREATE TABLE staff (
 id SERIAL PRIMARY KEY,
 name VARCHAR,
 position VARCHAR,
-department_id INT,
 staff_role VARCHAR
 );
 
 CREATE TABLE users_departments (
 id SERIAL PRIMARY KEY,
-staff_id INT,
+user_id INT,
 department_id INT
 );
 
